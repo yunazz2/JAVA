@@ -14,6 +14,7 @@ public class Board extends Text {
 	}
 	
 	public Board(String title, String writer, String content) {
+		
 		super(title, writer, content);
 	}
 
@@ -25,6 +26,7 @@ public class Board extends Text {
 	
 	public void setBoardNo(int boardNo) {
 		this.boardNo = boardNo;
+		setNo(boardNo);
 	}
 		
 	

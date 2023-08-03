@@ -15,10 +15,11 @@ import java.util.Scanner;
 
 public class Main {
 	
-	static int max = 10; // 게시글 최대 개수
-	static Text[] boardList = new Board[max];
+	static int max = 10; 							// 게시글 최대 개수
+	static Text[] boardList = new Board[max];		// 게시글 목록
+	static Text[] commentList = new Comment[max];	// 댓글 목록
 	static Scanner sc = new Scanner(System.in);
-	static DataService data = new BoardAccess(); // 데이터 베이스 접근 객체 (게시글)
+	static DataService data = new BoardAccess(); 	// 데이터 베이스 접근 객체 (게시글)
 	static DataService data2 = new CommentAccess(); // 데이터 베이스 접근 객체 (댓글)
 	
 	/**
@@ -26,11 +27,14 @@ public class Main {
 	 */
 	public static void menu() {
 		System.out.println("########## 게시판 ##########");
-		System.out.println("1. 게시판 목록");
+		System.out.println("1. 게시글 목록");
 		System.out.println("2. 게시글 읽기");
 		System.out.println("3. 게시글 쓰기");
 		System.out.println("4. 게시글 수정");
 		System.out.println("5. 게시글 삭제");
+		System.out.println("6. 댓글 쓰기");
+		System.out.println("7. 댓글 수정");
+		System.out.println("8. 댓글 삭제");
 		System.out.println("0. 프로그램 종료");
 		System.out.print("########## 번호 입력 : ");
 	}
@@ -75,7 +79,7 @@ public class Main {
 		Date regDate = board.getRegDate();
 		Date updDate = board.getUpdDate();
 		
-		System.out.println("- 글 번호 : " + boardNo);
+		System.out.println("- 글 번호 : " + boardNo + "############################");
 		System.out.println("- 글 제목 : " + title);
 		System.out.println("- 작성자 : " + writer);
 		System.out.println("- 내용 : " + content);
@@ -83,6 +87,29 @@ public class Main {
 		System.out.println("- 수정 일자 : " + updDate);
 		System.out.println("###############################################");
 		System.out.println();
+		
+		// 해당 글의 댓글 목록
+		commentList = data2.selectList(boardNo);
+		
+		System.out.println("------------------ [댓글 목록] ------------------");
+		for (int i = 0; i < commentList.length; i++) {
+			if(commentList[i] == null) {
+				continue;
+			}
+			int commentNo = commentList[i].getNo();
+			String commentWriter = commentList[i].getWriter();
+			String commentContent = commentList[i].getContent();
+			Date commentRegDate = commentList[i].getRegDate();
+			Date commentUpdDate = commentList[i].getUpdDate();
+			
+			System.out.println("===================================");
+			System.out.println("(" + commentNo + ") - [" + commentWriter + "]");
+			System.out.println("# : " + commentContent);
+			System.out.println("# 등록 일자 : " + commentRegDate);
+			System.out.println("# 수정 일자 : " + commentUpdDate);
+			System.out.println("===================================");
+		}
+		
 	}
 	
 	
@@ -172,6 +199,68 @@ public class Main {
 		return board;
 	}
 	
+	/**
+	 * 댓글 쓰기
+	 */
+	public static void commentWrite() {
+		System.out.println("##### 댓글 쓰기 #####");
+		System.out.print("글 번호 : " );
+		int boardNo = sc.nextInt();
+		sc.nextLine(); // 엔터 없애주기
+		
+		Comment comment = inputComment();
+		comment.setNo(boardNo); // no <- 게시글 번호(boardNo)
+		
+		int result = data2.insert(comment);
+		if(result > 0) {
+			System.out.println("댓글이 작성되었습니다.");
+		}
+	}
+	
+	// 댓글 정보 입력
+	public static Comment inputComment() {
+		
+		System.out.print("작성자 : ");
+		String writer = sc.nextLine();
+		System.out.print("내용 : ");
+		String content = sc.nextLine();
+		
+		Comment comment = new Comment(writer, content);
+		return comment;
+	}
+	
+	
+	/**
+	 * 댓글 수정
+	 */
+	public static void commentUpdate() {
+		System.out.println("##### 댓글 수정 #####");
+		System.out.print("댓글 번호 : " );
+		int commentNo = sc.nextInt();
+		sc.nextLine();
+		
+		Comment comment = inputComment();
+		comment.setNo(commentNo);
+		
+		int result = data2.update(comment);
+		if(result > 0) {
+			System.out.println("댓글을 수정하였습니다.");
+		}
+	}
+	
+	/**
+	 * 댓글 삭제
+	 */
+	public static void commentDelete() {
+		System.out.println("##### 댓글 수정 #####");
+		System.out.print("댓글 번호 : " );
+		int commentNo = sc.nextInt();
+		
+		int result = data2.delete(commentNo);
+		if(result > 0) {
+			System.out.println("댓글을 삭제하였습니다.");
+		}
+	}
 
 	// 게시판 프로그램 시작
 	public static void main(String[] args) {
@@ -188,11 +277,14 @@ public class Main {
 			
 			// 메뉴 선택
 			switch (menuNo) {
-			case 1: list(); break; // 게시글 목록
-			case 2: read(); break; // 게시글 읽기
-			case 3: write(); break; // 게시글 쓰기
-			case 4: update(); break; // 게시글 수정
-			case 5: delete(); break; // 게시글 삭제
+			case 1: list(); break; 			// 게시글 목록
+			case 2: read(); break; 			// 게시글 읽기
+			case 3: write(); break; 		// 게시글 쓰기
+			case 4: update(); break; 		// 게시글 수정
+			case 5: delete(); break; 		// 게시글 삭제
+			case 6: commentWrite(); break; 	// 댓글 쓰기
+			case 7: commentUpdate(); break; // 댓글 수정
+			case 8: commentDelete(); break; // 댓글 삭제
 			default: System.out.println("0~5 사이의 숫자를 입력해주세요."); break;
 			}
 			

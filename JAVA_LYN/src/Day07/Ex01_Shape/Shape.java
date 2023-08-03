@@ -1,6 +1,7 @@
 // 이 클래스 생성시 modifier를 abstract 체크하고 만들었음. => 추상 클래스
 package Day07.Ex01_Shape;
 
+
 // 추상 클래스
 public abstract class Shape {
 	

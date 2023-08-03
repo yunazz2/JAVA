@@ -24,6 +24,7 @@
 // 생성자			: ctrl + shift + S -> O
 // 단어 한 번에 지우기 : ctrl + backspace
 // git 업로드 단축키 : ctrl + shift + 3
+// 들여쓰기 맞춰주기 : shift + tab
 
 // 기본 생성자 : shift + alt + S -> Generate 어쩌고 저쩌고 슈퍼 클래스
 // 매개변수 : shift + alt + S -> O

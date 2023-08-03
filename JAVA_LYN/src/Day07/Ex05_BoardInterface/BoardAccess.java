@@ -158,5 +158,10 @@ public class BoardAccess extends JDBConnection implements DataService {
 		return result;
 
 	}
+
+	@Override
+	public Text[] selectList(int boardNo) {
+		return null;
+	}
 	
 }

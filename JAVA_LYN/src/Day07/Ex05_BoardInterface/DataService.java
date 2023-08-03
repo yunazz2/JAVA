@@ -4,6 +4,8 @@ package Day07.Ex05_BoardInterface;
 public interface DataService {
 	
 	 Text[] selectList();
+
+	 Text[] selectList(int boardNo);
 	
 	 Text select(int boardNo);
 	

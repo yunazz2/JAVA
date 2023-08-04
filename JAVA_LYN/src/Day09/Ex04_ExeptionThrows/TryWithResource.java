@@ -1,5 +1,5 @@
 // try구문에
-package Day09.Ex03_AutoClose;
+package Day09.Ex04_ExeptionThrows;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,9 +9,11 @@ public class TryWithResource {
 	
 	public static void main(String[] args) {
 		
-		try {
-			FileInputStream fis = new FileInputStream("test.txt");
-			//=>  test.txt 파일을 입력받는 객체
+		// try(자동으로 자원해제 할 객체 생성) { }
+		// : finally 구문에서 close()하지 않아도, 자동으로 자원 해제를 해준다.
+		// * AutoCloable 인터페이스를 구현한 클래스이여야 자동으로 자원 해제 가능
+		try (FileInputStream fis = new FileInputStream("test.txt")){
+			 //=>  test.txt 파일을 입력받는 객체
 			
 			int read = 0;
 			
@@ -25,7 +27,14 @@ public class TryWithResource {
 			e.printStackTrace();
 			System.err.println("입출력 관련 예외 발생");
 		}
-		
+		// 위에 try구문에 ()로 자동 자원 해제 객체를 생성해서 아래처럼 따로 안 써도 됨
+//		finally {
+//			try {
+//				fis.close();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
 	}
 	
 

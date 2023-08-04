@@ -14,16 +14,30 @@
  */
 package _04;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class _04 {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 N 입력 : ");
 		
 		int N = sc.nextInt();
 		
-		System.out.println(N);
+//		System.out.println(N);
+		
+		int arr[] = new int[N];
+		int a = 1;
+		
+		for (int i = 1; i <= N; i++) {
+			System.out.println("i(" + i + ")" + " : *");
+			System.out.println();
+			for (int j = 1; j <= arr.length-1; j++) {
+				System.out.println("*");
+			}
+			System.out.println("---------------------");
+		}
 		
 		sc.close();
 	}

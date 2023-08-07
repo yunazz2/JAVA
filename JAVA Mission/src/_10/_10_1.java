@@ -22,67 +22,41 @@
  */
 package _10;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class _10 {
+public class _10_1 {
 	public static void main(String[] args) {
 		
 		String title[] = {"성명", "출장비", "오만원", "만원", "오천원", "천원", "오백원", "백원", "오십원", "십원", "오원", "일원"};
-		String name = "";
-		int money = 0;
-		
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("이름을 입력하세요. : ");
-		name = sc.next();
-		System.out.print("얼마를 지급할까요? : ");
-		money = sc.nextInt();
+		System.out.print("몇 명의 데이터를 입력할까요? : ");
+		int N = sc.nextInt();
 		
+		String name[] = new String[N];
+		int money[] = new int[N];
 		
-		int a1 = money / 50000; // => 지급액의 5만원권 개수
-		int a11 = money % 50000; // => 지급액을 5만원으로 나누고 남은 나머지 금액
+		System.out.println(">> " + N + "명");
 		
-		int a2 = a11 / 10000; // => 지급액의 1만원권 개수
-		int a22 = a11 % 10000;
+		Scanner sc1 = new Scanner(System.in);
+		System.out.print("이름과 지급액을 각각 공백을 두고 입력하세요. : ");
 		
-		int a3 = a22 / 5000; // => 지급액의 5천원권 개수
-		int a33 = a22 % 5000;
+		// 이유나1 50000 이유나2 40000 이유나3 30000 이유나4 20000 이유나5 10000
+		// name[] = {이유나1, 이유나2, 이유나3, 이유나4, 이유나5}
+		// money[] = {50000, 40000, 30000, 20000, 10000}
 		
-		int a4 = a33 / 1000; // => 지급액의 1천원권 개수
-		int a44 = a33 % 1000;
-		
-		int a5 = a44 / 500; // => 지급액의 500원권 개수
-		int a55 = a44 % 500;
-		
-		int a6 = a55 / 100; // => 지급액의 100원권 개수
-		int a66 = a55 % 100;
-		
-		int a7 = a66 / 50; // => 지급액의 50권 개수
-		int a77 = a66 % 50;
-		
-		int a8 = a77 / 10; // => 지급액의 10원권 개수
-		int a88 = a77 % 10;
-		
-		int a9 = a88 / 5; // => 지급액의 5원권 개수
-		int a99 = a88 % 5;
-		
-		int a0 = a99 / 1; // => 지급액의 1원권 개수
-		int a00 = a99 % 1;
-				
-		int arr[] = {a1, a2, a3, a4, a5, a6, a7, a8, a9, a0};
-		
-		// 타이틀 출력
-		for (int i = 0; i < title.length; i++) {
-			System.out.print(title[i] + "\t");
+		for (int i = 0; i < name.length; i++) {
+			name[i] = sc1.next();
+			money[i] = sc1.nextInt();
+			
 		}
-		System.out.println();
-		System.out.print(name +  "\t" + money +  "\t");
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + "\t");
-		}
+		// name, money 배열 출력
+		System.out.println(Arrays.toString(name));
+		System.out.println(Arrays.toString(money));
 		
 		
-		
+
 		sc.close();
 	}
 

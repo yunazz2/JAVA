@@ -39,12 +39,29 @@ public class WrapperEx {
 		
 		// deprecated란?
 		// 더 이상 사용을 권장하지 않는 문법~
+		// 자바 5버전 부터는 객체로 생성하여 사용하지 않아도 오토박싱을 해준다.
+		// 오토박싱 : 기본형을 객체형으로 바꾸는 것
+		// 언박싱  : Wrapper 클래스를 기본 타입으로 변환하는 것
+		
 //		Integer i = new Integer(28);
 		Integer i = 28;
 		System.out.println(i.doubleValue());			// double 타입으로 변환
 		
+		
 		// Double
+		// double -> Double
+		// 실수 타입인 double 기본 타입을 객체화한 클래스
+		Double d = 3.14;
+		System.out.println(d.toString() + 0.06);				// 실수형 -> 문자열
+		System.out.println(Double.parseDouble("3.14") + 0.06);	// 문자열 -> 실수형
+		
 		
 		// Boolean
+		// boolean -> Boolean
+		// 불 타입인 boolean 기본 타입을 객체화한 클래스
+		Boolean b = (i < 40);
+		System.out.println(Boolean.toString(b));				// "true"
+		System.out.println(Boolean.parseBoolean("false"));		// "false" -> false
+		
 	}
 }

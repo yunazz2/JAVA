@@ -39,22 +39,32 @@ public class _10_1 {
 		
 		System.out.println(">> " + N + "명");
 		
-		Scanner sc1 = new Scanner(System.in);
-		System.out.print("이름과 지급액을 각각 공백을 두고 입력하세요. : ");
-		
-		// 이유나1 50000 이유나2 40000 이유나3 30000 이유나4 20000 이유나5 10000
-		// name[] = {이유나1, 이유나2, 이유나3, 이유나4, 이유나5}
-		// money[] = {50000, 40000, 30000, 20000, 10000}
-		
-		for (int i = 0; i < name.length; i++) {
+		// 입력
+		for (int i = 0; i < N; i++) {
+			Scanner sc1 = new Scanner(System.in);
+			System.out.print("이름 : ");
 			name[i] = sc1.next();
+			System.out.print("지급액 : ");
 			money[i] = sc1.nextInt();
-			
 		}
-		// name, money 배열 출력
+		
 		System.out.println(Arrays.toString(name));
 		System.out.println(Arrays.toString(money));
-		
+//		System.out.print("이름과 지급액을 각각 공백을 두고 입력하세요. : ");
+//		
+//		// 이유나1 50000 이유나2 40000 이유나3 30000 이유나4 20000 이유나5 10000
+//		// name[] = {이유나1, 이유나2, 이유나3, 이유나4, 이유나5}
+//		// money[] = {50000, 40000, 30000, 20000, 10000}
+//		
+//		for (int i = 0; i < name.length; i++) {
+//			name[i] = sc1.next();
+//			money[i] = sc1.nextInt();
+//			
+//		}
+//		// name, money 배열 출력
+//		System.out.println(Arrays.toString(name));
+//		System.out.println(Arrays.toString(money));
+//		
 		
 
 		sc.close();

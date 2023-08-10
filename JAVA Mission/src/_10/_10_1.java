@@ -24,6 +24,7 @@ package _10;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.jar.Attributes.Name;
 
 public class _10_1 {
 	public static void main(String[] args) {
@@ -31,13 +32,13 @@ public class _10_1 {
 		String title[] = {"성명", "출장비", "오만원", "만원", "오천원", "천원", "오백원", "백원", "오십원", "십원", "오원", "일원"};
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("몇 명의 데이터를 입력할까요? : ");
-		int N = sc.nextInt();
+		
+		System.out.print("이름 : ");
+		
 		
 		String name[] = new String[N];
 		int money[] = new int[N];
 		
-		System.out.println(">> " + N + "명");
 		
 		// 입력
 		for (int i = 0; i < N; i++) {

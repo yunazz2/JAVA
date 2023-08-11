@@ -32,25 +32,21 @@ public class _10_1 {
 		String title[] = {"성명", "출장비", "오만원", "만원", "오천원", "천원", "오백원", "백원", "오십원", "십원", "오원", "일원"};
 		
 		Scanner sc = new Scanner(System.in);
+		String name = new String();
 		
-		System.out.print("이름 : ");
-		
-		
-		String name[] = new String[N];
-		int money[] = new int[N];
-		
-		
-		// 입력
-		for (int i = 0; i < N; i++) {
-			Scanner sc1 = new Scanner(System.in);
-			System.out.print("이름 : ");
-			name[i] = sc1.next();
-			System.out.print("지급액 : ");
-			money[i] = sc1.nextInt();
+		while(true) { // 아래 조건이 true인 동안 반복한다.
+			System.out.print("이름을 입력하세요. : ");
+			name = sc.next();
+			
+			if(name.equals("QUIT")) { // while문이 계속 반복중인데 유저가 "QUIT"이라고 입력하면 반복문 종료.
+				break;
+			}
 		}
-		
-		System.out.println(Arrays.toString(name));
-		System.out.println(Arrays.toString(money));
+
+		sc.close();	
+	}
+
+}
 //		System.out.print("이름과 지급액을 각각 공백을 두고 입력하세요. : ");
 //		
 //		// 이유나1 50000 이유나2 40000 이유나3 30000 이유나4 20000 이유나5 10000
@@ -65,10 +61,3 @@ public class _10_1 {
 //		// name, money 배열 출력
 //		System.out.println(Arrays.toString(name));
 //		System.out.println(Arrays.toString(money));
-//		
-		
-
-		sc.close();
-	}
-
-}

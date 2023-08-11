@@ -22,11 +22,13 @@ public class _02 {
 		for (int i = 1; i <= N; i++) {
 			if(i % 2 == 0) {
 				evenSum += i;
+				System.out.print(evenSum);
 			}
 			else {
 				oddSum += i;
 			}
 		}
+		System.out.println();
 		
 		System.out.println("짝수의 합 : " + evenSum);
 		System.out.println("홀수의 합 : " + oddSum);

@@ -36,7 +36,7 @@ public class UserList {
 		Collections.sort(userList, new User());
 		
 		for (User user : userList) {
-			System.out.println("ID : " + user.id + ", name : " + user.name + ", age : " + user.age);
+			System.out.println("ID : " + user.id + "\t" + "/ name : " + user.name + "/ age : " + user.age);
 		}
 	}
 	

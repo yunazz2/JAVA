@@ -1,10 +1,35 @@
-// Map은 key와 value를 동시에 가짐
+// Map은 key와 value를 동시에 가짐 : Map<K, V>
 package Day13.Ex01_Collection;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
+
+/*
+ * Map
+   : 키(key), 값(value)를 쌍으로 구성한 요소를 다루는 컬렉션
+   * key는 중복되지 않는다.
+   
+   요소 추가
+   - put(key, value) : 키와 값을 추가
+   					 - 중복된 키가 추가되면 마지막에 추가된 값이 저장된다.
+   
+   요소 검색
+   - get(key)				: 키에 해당하는 값 반환
+   - contains(key)			: 키 존재 여부
+   - containsValue(value)	: 값 존재 여부
+   - isEmpty				: 비어있는지 여부
+   - size()					: 요소의 개수
+   - keySet()				: 모든 키를 Set 객체로 반환
+   - values()				: 모든 값을 Collection 객체로 반환
+   
+   요소 삭제
+   - remove(key)			: 키에 해당하는 값 삭제
+   - clear()				: 모든 요소 삭제
+ */
+
 
 public class MapEx {
 

@@ -27,9 +27,12 @@ import java.util.Scanner;
 import java.util.jar.Attributes.Name;
 
 public class _10_1 {
+	
+	
 	public static void main(String[] args) {
 		
 		String title[] = {"성명", "출장비", "오만원", "만원", "오천원", "천원", "오백원", "백원", "오십원", "십원", "오원", "일원"};
+		
 		
 		Scanner sc = new Scanner(System.in);
 		String name = new String();
@@ -38,7 +41,7 @@ public class _10_1 {
 			System.out.print("이름을 입력하세요. : ");
 			name = sc.next();
 			
-			if(name.equals("QUIT")) { // while문이 계속 반복중인데 유저가 "QUIT"이라고 입력하면 반복문 종료.
+			if(name.equals("QUIT") || name.equals("quit")) { // while문이 계속 반복중인데 유저가 "QUIT"이라고 입력하면 반복문 종료.
 				break;
 			}
 		}

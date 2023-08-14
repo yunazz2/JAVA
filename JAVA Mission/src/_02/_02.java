@@ -14,26 +14,39 @@ public class _02 {
 		System.out.print("정수 하나를 입력하세요(1 <= 정수 <= 100) : ");
 		
 		int N = sc.nextInt();
+
+		System.out.println();
 		
 		int evenSum = 0; // 1~N까지의 정수 중 짝수의 합
 		int oddSum = 0; // 1~N까지의 정수 중 홀수의 합
 		int factor = 0; // 정수 N의 약수
 		
 		for (int i = 1; i <= N; i++) {
-			if(i % 2 == 0) {
-				evenSum += i;
-				System.out.print(evenSum);
+			if(i % 2 == 1) {
+				oddSum += i;
+				if(i != N-1) {
+					System.out.print(i + "+");
+				}
+				else {
+					System.out.print(i + "=" + oddSum);
+					System.out.println();
+				}
 			}
 			else {
-				oddSum += i;
+				evenSum += i;
+				if(i != N) {
+					System.out.print(i + "+");
+				}
+				else {
+					System.out.print(i + "=" + evenSum);
+				}
 			}
 		}
 		System.out.println();
 		
-		System.out.println("짝수의 합 : " + evenSum);
 		System.out.println("홀수의 합 : " + oddSum);
+		System.out.println("짝수의 합 : " + evenSum);
 		
-		System.out.print("약수 : ");
 		for (int j = 1; j <= N; j++) {
 			if(N % j == 0) {
 				System.out.print(j+" ");

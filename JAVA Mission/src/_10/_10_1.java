@@ -28,39 +28,76 @@ import java.util.jar.Attributes.Name;
 
 public class _10_1 {
 	
-	
 	public static void main(String[] args) {
-		
-		String title[] = {"성명", "출장비", "오만원", "만원", "오천원", "천원", "오백원", "백원", "오십원", "십원", "오원", "일원"};
-		
-		
 		Scanner sc = new Scanner(System.in);
-		String name = new String();
 		
-		while(true) { // 아래 조건이 true인 동안 반복한다.
+		System.out.print("몇 명의 데이터를 입력할까요? : ");
+		
+		int 몇명 = sc.nextInt();
+		
+		int count;
+		int money = 50000;
+		boolean sw = true; // 화폐 단위 변환을 위한 스위치
+		
+		String[] name = new String[몇명];
+		int[] inputMoney = new int[몇명];
+		
+		int a = 0;
+		while (a < 몇명) {
 			System.out.print("이름을 입력하세요. : ");
-			name = sc.next();
+			name[a] = sc.next();
 			
-			if(name.equals("QUIT") || name.equals("quit")) { // while문이 계속 반복중인데 유저가 "QUIT"이라고 입력하면 반복문 종료.
+			if(name.equals("QUIT") || name.equals("quit")) {
 				break;
 			}
+			
+			System.out.print("간식비 지급액을 입력하세요. : ");
+			inputMoney[a] = sc.nextInt();
+			
+			a++;
+		} // 여기까지 이름, 간식비 지급액 입력 받아 각각 name, money 배열로 저장 함
+		
+		
+		while(money >= 1) { // 화폐 최고 단위인 50000원권부터 시작해 1원이 될 때까지 반복
+			
+			for (int i = 0; i < 몇명; i++) {
+				System.out.print("=> " + name[i] + "은 / 는");
+				for (int j = 0; j < 몇명; j++) {
+					count = inputMoney[j] / money;
+					System.out.println(money + "원권 : " + count + "개");
+					
+					inputMoney[j] = inputMoney[j] - (money * count);
+				}
+				if(sw) {
+					money = money / 5;
+				}
+				else {
+					money = money / 2;
+				}
+				sw = !sw;
+					
+			}
 		}
-
-		sc.close();	
+		
+		sc.close();
 	}
-
 }
-//		System.out.print("이름과 지급액을 각각 공백을 두고 입력하세요. : ");
-//		
-//		// 이유나1 50000 이유나2 40000 이유나3 30000 이유나4 20000 이유나5 10000
-//		// name[] = {이유나1, 이유나2, 이유나3, 이유나4, 이유나5}
-//		// money[] = {50000, 40000, 30000, 20000, 10000}
-//		
-//		for (int i = 0; i < name.length; i++) {
-//			name[i] = sc1.next();
-//			money[i] = sc1.nextInt();
-//			
-//		}
-//		// name, money 배열 출력
-//		System.out.println(Arrays.toString(name));
-//		System.out.println(Arrays.toString(money));
+
+
+
+
+
+//for (int i = 0; i < 몇명; i++) {
+//	count = inputMoney[i] / money;
+//	System.out.println("=> " + name[i] + " 은/는 ");
+//	System.out.println(money + "원권 : " + count + "개");
+//	
+//	inputMoney[i] = inputMoney[i] - (money * count);
+//}
+//if(sw) {
+//	money = money / 5;
+//}
+//else {
+//	money = money / 2;
+//}
+//sw = !sw;

@@ -53,13 +53,8 @@ public class Lotto {
 		for (int i = 0; i < N; i++) {
 			System.out.print(i+1 + "게임 : ");
 			
-			
-			
 			for (int j = 0; j < 6; j++) {
-							
-				
 				System.out.print(num[i][j] + " ");
-								
 			}
 						
 			System.out.println();

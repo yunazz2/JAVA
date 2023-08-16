@@ -35,9 +35,9 @@ public class _10_1 {
 		
 		int 몇명 = sc.nextInt();
 		
-		int count;
-		int money = 50000;
-		boolean sw = true; // 화폐 단위 변환을 위한 스위치
+		int count; 			// 화폐 장 수
+		int money = 50000;	// 가장 큰 화폐 단위
+		boolean sw = true; 	// 화폐 단위 변환을 위한 스위치
 		
 		String[] name = new String[몇명];
 		int[] inputMoney = new int[몇명];
@@ -57,26 +57,20 @@ public class _10_1 {
 			a++;
 		} // 여기까지 이름, 간식비 지급액 입력 받아 각각 name, money 배열로 저장 함
 		
+		System.out.println();
 		
 		while(money >= 1) { // 화폐 최고 단위인 50000원권부터 시작해 1원이 될 때까지 반복
-			
-			for (int i = 0; i < 몇명; i++) {
-				System.out.print("=> " + name[i] + "은 / 는");
+			for (int i = 0; i < 몇명; i++) { // 0, 1, 2, 3
+				System.out.print(name[i] + " : ");
 				for (int j = 0; j < 몇명; j++) {
-					count = inputMoney[j] / money;
-					System.out.println(money + "원권 : " + count + "개");
-					
-					inputMoney[j] = inputMoney[j] - (money * count);
+					count = inputMoney[i] / money;
+					System.out.print(count + "장 ");
 				}
-				if(sw) {
-					money = money / 5;
-				}
-				else {
-					money = money / 2;
-				}
-				sw = !sw;
-					
+				System.out.println();
 			}
+			
+			money = money / 5;
+			
 		}
 		
 		sc.close();

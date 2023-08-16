@@ -1,4 +1,4 @@
-/**
+/** 완료 지그재그
  * 정수 N을 입력 받아, N행 N열의 2차원 배열을 선언하시오. 그리고 배열요소의 1부터 1씩 증가하는 값을 순서대로 저장하면서
  * 행이 증가할 때마다 배열요소에 접근하는 방향을 반대로 하여 값을 저장하고 출력하시오.
  * 
@@ -14,7 +14,7 @@ package _08;
 
 import java.util.Scanner;
 
-public class _08_Zigzag {
+public class _08 {
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

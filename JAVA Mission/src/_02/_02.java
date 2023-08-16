@@ -1,4 +1,4 @@
-/**
+/** 완료
  * 정수 하나를 입력 받아, 정수형 변수 N에 초기화시키고,
  * 정수 1부터 N까지 홀수의 합계와 짝수의 합계
  * 그리고 정수 N의 약수를 구하여 예시 <출력>과 같이 출력하는 프로그램을 작성하시오. ( 1 ≤ N ≤ 100 )
@@ -22,24 +22,22 @@ public class _02 {
 		int factor = 0; // 정수 N의 약수
 		
 		for (int i = 1; i <= N; i++) {
-			if(i % 2 == 1) {
+			// 홀수일 때
+			if(i % 2 == 1 && i != N-1) {
 				oddSum += i;
-				if(i != N-1) {
-					System.out.print(i + "+");
-				}
-				else {
-					System.out.print(i + "=" + oddSum);
-					System.out.println();
-				}
+				System.out.print(i + "+");
+			}
+			else if(i % 2 == 1 && i == N-1) {
+				oddSum += i;
+				System.out.println(i + "=");
+			}
+			else if(i % 2 == 0 && i != N) {
+				evenSum += i;
+				System.out.print(i + "+");
 			}
 			else {
 				evenSum += i;
-				if(i != N) {
-					System.out.print(i + "+");
-				}
-				else {
-					System.out.print(i + "=" + evenSum);
-				}
+				System.out.print(i + "=");
 			}
 		}
 		System.out.println();

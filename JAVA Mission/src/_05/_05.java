@@ -1,4 +1,4 @@
-/*
+/* 완료 치킨 메뉴
  • (조건)
 - do~while 문, switch 문, static 메소드 정의 및 호출을 반드시 사용하시오.
 - 정수1~3 입력 시, 해당 메뉴 이름과 주문안내 문구를 출력하시오.
@@ -35,7 +35,7 @@ package _05;
 
 import java.util.Scanner;
 
-public class _05_ChickenMenu {
+public class _05 {
 
 	public static void main(String[] args) {
 		

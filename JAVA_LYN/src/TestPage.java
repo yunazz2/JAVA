@@ -5,13 +5,11 @@ import java.util.Arrays;
 public class TestPage {
 	
 	public static void main(String[] args) {
-		String arr[] = {"a", "b", "c", "d", "f"};
+		int a = 2;
+		int b = 1;
 		
-		int index = Arrays.binarySearch(arr, "d");
-		
-		System.out.println(Arrays.toString(arr));
-		System.out.println(index + " 에 해당하는 값 -> " + arr[index]);
+		if(a != b) {
+			System.out.println(true);
+		}
 	}
-	
-
 }

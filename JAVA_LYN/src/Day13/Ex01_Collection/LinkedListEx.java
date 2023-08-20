@@ -6,7 +6,7 @@ import java.util.Scanner;
 import Day06.Board;
 
 
-/*
+/**
 	ArrayList
 	* 순차적으로 추가/삭제	=> 빠르다
 	* 중간에 추가/삭제		=> 느리다

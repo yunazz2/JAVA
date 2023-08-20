@@ -35,7 +35,6 @@ class Person {
 	}
 	
 	
-	
 }
 
 public class StreamArrayList {

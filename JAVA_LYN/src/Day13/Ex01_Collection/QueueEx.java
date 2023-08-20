@@ -3,7 +3,7 @@ package Day13.Ex01_Collection;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/*
+/**
  * Queue
    먼저 추가된 데이터가 가장 먼저 나오는 자료구조
    

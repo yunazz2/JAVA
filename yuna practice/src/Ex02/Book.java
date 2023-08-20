@@ -2,7 +2,7 @@ package Ex02;
 
 public class Book {
 	
-	int isbn;	// International Standard Book Number / 국제 표준 도서 번호
+	int isbn;	// International Standard Book Number : 국제 표준 도서 번호
 	String title, writer, content;
 	int price;
 	

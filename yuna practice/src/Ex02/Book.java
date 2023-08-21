@@ -2,8 +2,8 @@ package Ex02;
 
 public class Book {
 	
-	int isbn;	// International Standard Book Number : 국제 표준 도서 번호
-	String title, writer, content;
+	// International Standard Book Number : 국제 표준 도서 번호
+	String isbn, title, writer, content;
 	int price;
 	
 	
@@ -12,7 +12,7 @@ public class Book {
 	}
 
 	// 생성자
-	public Book(int isbn, String title, String writer, String content, int price) {
+	public Book(String isbn, String title, String writer, String content, int price) {
 		this.isbn = isbn;
 		this.title = title;
 		this.writer = writer;
@@ -22,11 +22,11 @@ public class Book {
 	
 
 	// getter, setter
-	public int getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 	
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 

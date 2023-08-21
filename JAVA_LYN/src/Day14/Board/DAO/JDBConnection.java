@@ -28,7 +28,7 @@ public class JDBConnection {
 			// * 내 PC의 IP 주소 : localhost : 127.0.0.1
 			// * 3306 : MySQL 데이터베이스의 기본 포트
 			// * 아래 localhost 부분에 192.168.30.119 << 넣으면 이거 선생님 db에 들어가서 글 쓰고 댓글 쓰기 가능ㅋㄷ
-			String url = "jdbc:mysql://192.168.30.119:3306/joeun?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false";
+			String url = "jdbc:mysql://localhost:3306/joeun?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false";
 			String id = "joeun";
 			String pw = "123456";
 			

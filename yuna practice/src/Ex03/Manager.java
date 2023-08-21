@@ -54,8 +54,10 @@ public class Manager {
         }
         
         
-        // 성적을 내림차순으로 정렬, 성적이 같다면 번호를 오름차순으로 정렬
+        // 성적을 내림차순으로 정렬, 번호를 오름차순으로 정렬
         studentList.sort(Comparator.comparingInt(Student::getScore).reversed().thenComparingInt(Student::getNo));
+        // studentList를 정렬하는데, Student 클래스의 객체별 성적을 읽는 메소드를 호출하여 비교한 뒤 내림차순 정렬하고, 
+        //										객체별 번호를 읽는 메소드를 호출하여 비교한 뒤 오름차순 정렬한다.
         
         
         // 정렬된 데이터 출력

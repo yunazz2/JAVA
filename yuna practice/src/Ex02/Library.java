@@ -32,9 +32,9 @@ public class Library {
 	public static void main(String[] args) {
 		ArrayList<Book> bookList = new ArrayList<>();
 		
-		Book bk1 = new Book(123123, "이게 자바냐", "감자바", "자바 감자바", 33000);
-		Book bk2 = new Book(112112, "정보처리기사", "김휴먼", "국가기술자격", 45000);
-		Book bk3 = new Book(001001, "실무 DB", "박디비", "디비디비딥", 60000);
+		Book bk1 = new Book("123123", "이게 자바냐", "감자바", "자바 감자바", 33000);
+		Book bk2 = new Book("112112", "정보처리기사", "김휴먼", "국가기술자격", 45000);
+		Book bk3 = new Book("001001", "실무 DB", "박디비", "디비디비딥", 60000);
 		
 		
 		bookList.add(bk1);
